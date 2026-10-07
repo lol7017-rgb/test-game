@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://riwhkecloue7"]
+
+[ext_resource type="Script" uid="uid://ctvvsutmefkmt" path="res://ship.gd" id="1_4cq66"]
+[ext_resource type="Script" uid="uid://81ss7gu700yy" path="res://ship_grid.gd" id="2_4cq66"]
+[ext_resource type="Script" uid="uid://bgm1vdj0f2ffu" path="res://camera.gd" id="2_v4325"]
+[ext_resource type="Script" uid="uid://b8fsc1ks2en2f" path="res://hud.gd" id="4_c3vuw"]
+
+[node name="Ship" type="RigidBody2D" unique_id=726023790]
+gravity_scale = 0.0
+script = ExtResource("1_4cq66")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=359552180]
+script = ExtResource("2_v4325")
+
+[node name="BlockGrid" type="Node2D" parent="." unique_id=161884975]
+script = ExtResource("2_4cq66")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1808406634]
+script = ExtResource("4_c3vuw")

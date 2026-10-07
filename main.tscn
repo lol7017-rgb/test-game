@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bdyigy4fvbvtr"]
+
+[ext_resource type="Script" uid="uid://rjxgsk75oqdg" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="Script" uid="uid://dbwtr4rrili08" path="res://grid.gd" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://riwhkecloue7" path="res://ship.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bmlqqrek3sg3s" path="res://asteroid.tscn" id="4_7mycd"]
+[ext_resource type="Script" uid="uid://btr08qngdwar5" path="res://stars.gd" id="4_lquwl"]
+
+[node name="Main" type="Node2D" unique_id=2139331806]
+script = ExtResource("1_lquwl")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1809061539]
+script = ExtResource("2_h2yge")
+
+[node name="Ship" parent="." unique_id=726023790 instance=ExtResource("4_1bvp3")]
+
+[node name="Starfield" type="ParallaxBackground" parent="." unique_id=505191512]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Starfield" unique_id=1763758190]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(1000, 1000)
+
+[node name="Stars" type="Node2D" parent="Starfield/ParallaxLayer" unique_id=1405254215]
+script = ExtResource("4_lquwl")
+
+[node name="Asteroid" parent="." unique_id=562410575 instance=ExtResource("4_7mycd")]
+position = Vector2(297, -116)
+
+[node name="Asteroid2" parent="." unique_id=2060442797 instance=ExtResource("4_7mycd")]
+position = Vector2(399, 132)
+
+[node name="Asteroid3" parent="." unique_id=1728747163 instance=ExtResource("4_7mycd")]
+position = Vector2(-316, -103)
+
+[node name="Asteroid4" parent="." unique_id=537482696 instance=ExtResource("4_7mycd")]
+position = Vector2(-244, 245)
+
+[node name="Target" parent="." unique_id=231669089 instance=ExtResource("4_1bvp3")]
+position = Vector2(-1000, 0)
+is_player = false
+fire_rate = 1.0
