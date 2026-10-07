@@ -1,0 +1,7 @@
+# Godot 4
+.tmp
+*.uid
+.godot/
+imported/
+exports/
+.DS_Store
